@@ -1,0 +1,386 @@
+# Sales Tax for all States
+
+SALES_TAX_RATE = {
+    "ALABAMA": 0.04,
+    "ALASKA": 0.00,
+    "ARIZONA": 0.056,
+    "ARKANSAS": 0.065,
+    "CALIFORNIA": 0.0725,
+    "COLORADO": 0.029,
+    "CONNECTICUT": 0.0635,
+    "DELAWARE": 0.00,
+    "FLORIDA": 0.06,
+    "GEORGIA": 0.04,
+    "HAWAII": 0.04,
+    "IDAHO": 0.06,
+    "ILLINOIS": 0.0625,
+    "INDIANA": 0.07,
+    "IOWA": 0.06,
+    "KANSAS": 0.065,
+    "KENTUCKY": 0.06,
+    "LOUISIANA": 0.0445,
+    "MAINE": 0.055,
+    "MARYLAND": 0.06,
+    "MASSACHUSETTS": 0.0625,
+    "MICHIGAN": 0.06,
+    "MINNESOTA": 0.06875,
+    "MISSISSIPPI": 0.07,
+    "MISSOURI": 0.04225,
+    "MONTANA": 0.00,
+    "NEBRASKA": 0.055,
+    "NEVADA": 0.0685,
+    "NEW HAMPSHIRE": 0.00,
+    "NEW JERSEY": 0.06625,
+    "NEW MEXICO": 4.875,
+    "NEW YORK": 0.04,
+    "NORTH CAROLINA": 0.0475,
+    "NORTH DAKOTA": 0.05,
+    "OHIO": 0.0575,
+    "OKLAHOMA": 0.0450,
+    "OREGON": 0.00,
+    "PENNSYLVANIA": 0.06,
+    "RHODE ISLAND": 0.07,
+    "SOUTH CAROLINA": 0.06,
+    "SOUTH DAKOTA": 0.0420,
+    "TENNESSEE": 0.07,
+    "TEXAS": 0.0625,
+    "UTAH": 0.0610,
+    "VERMONT": 0.06,
+    "VIRGINIA": 0.0530,
+    "WASHINGTON": 0.065,
+    "WEST VIRGINIA": 0.06,
+    "WISCONSIN": 0.05,
+    "WYOMING": 0.04,
+    "DISTRICT OF COLUMBIA": 0.06,
+}
+
+# Dictionary of Items for Sale
+produce = {
+    "BANANA": 0.35,
+    "APPLE": 1.50,
+    "ORANGE": 0.75,
+    "STRAWBERRIES": 4.00,
+    "GRAPES": 4.00,
+    "MANGO": 3.00,
+    "PINEAPPLE": 4.00,
+    "WATERMELON": 5.00,
+    "CANTALOUPE": 3.50,
+    "BLUEBERRIES": 5.00,
+    "TOMATO": 1.50,
+    "LETTUCE": 2.50,
+    "CARROT": 1.50,
+    "BROCCOLI": 2.50,
+    "POTATO": 0.50,
+    "ONION": 1.00,
+    "BELL PEPPER": 1.50,
+    "AVOCADO": 2.00,
+    "CUCUMBER": 1.00,
+    "SPINACH": 3.00,
+}
+
+beverages = {
+    "WATER": 1.50,
+    "SPARKLING WATER": 3.00,
+    "COCONUT WATER": 3.50,
+    "GINGER ALE": 2.25,
+    "COLA": 3.00,
+    "ENERGY DRINK": 4.00,
+    "ICED TEA": 3.00,
+    "HERBAL TEA": 2.50,
+    "ORANGE JUICE": 4.00,
+    "APPLE JUICE": 4.00,
+    "JUICE BOX": 1.00,
+    "SMOOTHIE": 6.00,
+    "LEMONADE": 2.50,
+    "ICED COFFEE": 4.00,
+    "HOT CHOCOLATE": 3.50,
+    "HOT COFFEE": 3.50,
+    "ESPRESSO": 3.50,
+    "WINE": 15.00,
+    "BEER": 10.00,
+    "ALCOHOLIC SELTZER": 4.50,
+}
+
+bakery = {
+    "FRENCH BREAD": 3.50,
+    "BAGUETTE": 2.50,
+    "CROISSANT": 8.00,
+    "BAGEL": 6.00,
+    "BRIOCHE": 4.00,
+    "PRETZEL": 1.50,
+    "CUPCAKE": 5.00,
+    "CANNOLI": 4.00,
+    "MACARON": 3.00,
+    "CINNAMON ROLL": 3.00,
+    "MUFFIN": 2.00,
+    "MOON CAKES": 3.50,
+    "COOKIES": 6.00,
+    "DONUT": 2.00,
+    "CUSTARD": 5.00,
+    "PIES": 12.00,
+    "CHEESECAKE": 11.00,
+    "CAKE": 15.00,
+    "LEMON BAR": 2.50,
+    "FRUIT TART": 3.00,
+}
+
+dairy = {
+    "MILK": 4.50,
+    "STRAWBERRY MILK": 4.00,
+    "CHOCOLATE MILK": 4.50,
+    "OAT MILK": 4.00,
+    "ALMOND MILK": 3.50,
+    "CONDENSED MILK": 3.00,
+    "BUTTER": 4.00,
+    "WHIPPED BUTTER": 4.00,
+    "CHEDDAR CHEESE": 3.00,
+    "COTTAGE CHEESE": 2.50,
+    "CREAM CHEESE": 3.00,
+    "PARMESAN CHEESE": 6.00,
+    "GOUDA CHEESE": 7.00,
+    "FETA CHEESE": 6.00,
+    "EGGS": 5.00,
+    "YOGURT": 2.50,
+    "GREEK YOGURT": 3.00,
+    "SOUR CREAM": 2.50,
+    "WHIPPED CREAM": 3.50,
+    "COFFEE CREAMER": 2.50,
+}
+
+deli = {
+    "CHICKEN BREAST": 5.00,
+    "CHICKEN THIGH": 4.00,
+    "GROUND BEEF": 6.00,
+    "BEEF SIRLOIN": 9.00,
+    "BEEF TENDERLOIN": 15.00,
+    "VEAL CUTLET": 14.00,
+    "PORK CHOP": 5.50,
+    "PORK RIBS": 7.00,
+    "BACON": 7.00,
+    "HAM": 5.00,
+    "HOT DOG": 4.00,
+    "HAM WRAP": 5.00,
+    "SUSHI": 12.00,
+    "CRAB": 15.00,
+    "CANNED TUNA": 3.00,
+    "SHRIMP": 15.00,
+    "TURKEY": 4.50,
+    "TURKEY WRAP": 5.00,
+    "GROUND TURKEY": 5.00,
+    "LAMB CHOP": 12.00,
+}
+
+snacks = {
+    "POTATO CHIPS": 3.50,
+    "VEGGIE CHIPS": 2.50,
+    "TORTILLA CHIPS": 3.50,
+    "POPCORN": 2.50,
+    "PRETZELS": 3.00,
+    "TRAIL MIX": 5.00,
+    "NUTS": 6.00,
+    "CHOCOLATE BAR": 2.50,
+    "PROTEIN BAR": 4.00,
+    "GRANOLA BAR": 3.00,
+    "CRACKERS": 3.50,
+    "CHEESE CRACKERS": 2.00,
+    "RICE CRACKERS": 4.00,
+    "BEEF JERKY": 7.00,
+    "BEEF STICK": 4.00,
+    "FRUIT SNACK": 1.00,
+    "FRUIT LEATHER": 2.00,
+    "FRUIT CUP": 1.50,
+    "SALSA": 3.50,
+    "DRIED SEAWEED": 3.00,
+}
+
+frozen = {
+    "FROZEN PIZZA": 8.00,
+    "FROZEN BROCCOLI": 3.00,
+    "FROZEN CARROTS": 3.00,
+    "FROZEN MANGOES": 4.00,
+    "FROZEN BANANAS": 3.50,
+    "FROZEN BLUEBERRIES": 4.00,
+    "FROZEN STRAWBERRIES": 4.00,
+    "ICE CREAM": 5.00,
+    "POPSICLE": 1.00,
+    "FROZEN CHICKEN NUGGETS": 5.00,
+    "FROZEN CHICKEN WINGS": 8.00,
+    "FROZEN FISH FILET": 5.00,
+    "FROZEN FRENCH FRIES": 3.50,
+    "FROZEN BURRITO": 2.50,
+    "FROZEN SHRIMP": 10.00,
+    "FROZEN DINNER": 5.00,
+    "FROZEN WAFFLES": 4.50,
+    "FROZEN DUMPLINGS": 6.00,
+    "FROZEN MEATBALLS": 6.00,
+    "FROZEN TAQUITOS": 5.00,
+}
+
+# Define aisles dictionary
+aisles = {
+    "PRODUCE": produce,
+    "BEVERAGES": beverages,
+    "BAKERY": bakery,
+    "DAIRY": dairy,
+    "DELI": deli,
+    "SNACKS": snacks,
+    "FROZEN": frozen
+}
+
+#Cost Calculation
+def calculate_total_cost(shopping_cart, prompt_aisle):
+    subtotal = sum(aisles[prompt_aisle][item] * quantity for item, quantity in shopping_cart.items())
+    sales_tax = round(subtotal * SALES_TAX_RATE[State], 4)
+    total_cost = subtotal + sales_tax
+    return subtotal, sales_tax, total_cost
+
+
+# Display the Catalog to the User
+print("""
+                                                                            _______________________
+                                                                            |                     |
+                                                                            |                     |
+                                                                            |       Welcome       |
+                                                                            |                     |
+                                                                            |_____________________|
+
+""")
+
+while True:
+    prompt_aisle = input(
+        "What aisle would you like to go to? Produce, Beverages, Bakery, Dairy, Deli, Snacks, or Frozen. Enter: ").upper()
+
+    if prompt_aisle in aisles:
+        print(f'\nThis is the {prompt_aisle.lower()} aisle.')
+        for item, price in aisles[prompt_aisle].items():
+            if isinstance(price, (int, float)):
+                print(item, price)
+            else:
+                print(f"Price for {item} is not valid.")
+        break
+    else:
+        print("\nSorry we don't have that aisle, or you spelled the aisle wrong.\n")
+
+# Initialize shopping cart
+shopping_cart = {}
+
+# Shopping cart options
+print("""
+Shopping Cart Options
+----------------------
+1: Add item
+2: Remove item
+3: View Basket
+4: View Aisle Items again
+0: Exit Program
+""")
+
+# Get the initial option from the user
+while True:
+    try:
+        option = int(input("Enter an Option: "))
+        if option in [0, 1, 2, 3, 4]:
+            break
+        else:
+            print("Invalid option! Please enter a valid option.")
+    except ValueError:
+        print("Invalid input! Please enter a number.")
+
+# Displaying options
+while option != 0:
+    if option == 1:
+        # Add item functionality
+        item = input("Enter an item: ").upper()
+        if item in aisles[prompt_aisle]:
+            if item in shopping_cart:
+                print("Item already in shopping cart!")
+                while True:
+                    try:
+                        quantity = int(input("Enter the quantity: "))
+                        if quantity > 0:
+                            shopping_cart[item] += quantity
+                            break
+                        else:
+                            print("Quantity should be greater than zero.")
+                    except ValueError:
+                        print("Invalid input! Please enter a valid quantity.")
+            else:
+                while True:
+                    try:
+                        quantity = int(input("Enter the quantity: "))
+                        if quantity > 0:
+                            shopping_cart[item] = quantity
+                            break
+                        else:
+                            print("Quantity should be greater than zero.")
+                    except ValueError:
+                        print("Invalid input! Please enter a valid quantity.")
+        else:
+            print("\nSorry, that item is not available in this aisle or you misspelled the item.\n")
+    elif option == 2:
+        # Remove item functionality
+        while True:
+            item = input("Enter an item: ").upper()
+            delAllOfItem = input(f"Would you like to delete all {item} Enter yes or no: ")
+            if item in shopping_cart:
+                if delAllOfItem == "yes":
+                    del shopping_cart[item]
+                    print(f"We have removed {item.lower()} from the cart.")
+                    break
+                else:
+                    print("Item has not been removed.")
+            else:
+                print("That item is not in the shopping cart.")
+
+    elif option == 3:
+        # View Basket functionality
+        if not shopping_cart:
+            print("Your cart is empty :(")
+        else:
+            # Calculate the total cost
+            subtotal = sum(aisles[prompt_aisle][item] * quantity for item, quantity in shopping_cart.items())
+
+            # Display the shopping cart items and their prices
+            print("Shopping cart:")
+            for item, quantity in shopping_cart.items():
+                print(f"{item}: {quantity} - ${aisles[prompt_aisle][item] * quantity:.2f}")
+
+            # Display subtotal, sales tax, and total cost
+            print(f"Subtotal: ${subtotal:.2f}")
+
+    # View aisles again without scrolling
+    elif option == 4:
+        if prompt_aisle in aisles:
+            print(f'\nThis is the {prompt_aisle.lower()} aisle.')
+            for item, price in aisles[prompt_aisle].items():
+                if isinstance(price, (int, float)):
+                    print(item, price)
+                else:
+                    print(f"Price for {item} is not valid.")
+
+    # Get the next option from the user
+    while True:
+        try:
+            option = int(input("\n\nEnter an option: "))
+            if option in [0, 1, 2, 3, 4]:
+                break
+            else:
+                print("Invalid option! Please enter a valid option.")
+        except ValueError:
+            print("Invalid input! Please enter a number.")
+
+# Calculate and display the total cost before exiting the program
+while True:
+    State = input("Please enter the state you are currently in. Enter: ").upper()
+    if State in SALES_TAX_RATE:
+        if shopping_cart:
+            subtotal, sales_tax, total_cost = calculate_total_cost(shopping_cart, prompt_aisle)
+            print("\nThank you for shopping with us!")
+            print(f"Subtotal: ${subtotal:.2f}")
+            print(f"Sales Tax ({SALES_TAX_RATE[State] * 100}%): ${sales_tax:.4f}")
+            print(f"Total Cost: ${total_cost:.2f}")
+            break
+        else:
+            print("\nThank you for visiting. Your cart is empty.")
+    else:
+        print("\nSorry that is not a state, or perhaps you misspelled it.\n")
